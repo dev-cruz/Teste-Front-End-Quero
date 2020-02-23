@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
+import Header from './component/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Quero!</h1>
+      <Header />
     </div>
   );
 }

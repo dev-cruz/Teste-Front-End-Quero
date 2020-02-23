@@ -1,3 +1,14 @@
+:root {
+  --main-blue: #18ACC4;
+  --sec-blue: #007A8D;
+  --main-yellow: #FDCB13;
+  --sec-yellow: #DE9E1F;
+  --green: #0FA866;
+  --font-color: #1F2D30;
+  --grey-bg: #FBFBFB;
+  --modal-overlay: rgba(31, 45, 48, 0.88);
+}
+
 .App {
   text-align: center;
 }
