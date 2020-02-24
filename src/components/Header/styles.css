@@ -1,13 +1,15 @@
 .top-bar {
     height: 110px;
+    width: 100%;
 }
 
 .top-bar__header {
     align-items: center;
     display: flex;
-    height: 60%;
+    height: 65%;
     justify-content: space-between;
     padding: 5px 10px;
+    width: 100%;
 }
 
 .header__logo-whats {
@@ -31,8 +33,29 @@
 }
 
 .top-bar__nav-bar {
+    align-items: center;
     background-color: var(--main-blue);
-    height: 40%;
+    display: flex;
+    color: #fff;
+    height: 35%;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.top-bar__nav-bar h2 {
+    margin: 0;
+}
+
+.nav-bar__menu__nav-links button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2em;
+    justify-content: space-between;
+    width: 75px;   
 }
 
 @media (min-width: 720px) {

@@ -36,12 +36,14 @@
     }
     .info-card__label--desktop {
         display: block;
+        text-align: left;
     }
     .whats {
         display: flex;
     }
 
-    .justify-end {
+    .name-lastname {
         margin-left: auto;
+        flex-direction: row-reverse;
     }
 }
