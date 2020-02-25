@@ -11,7 +11,7 @@ function Filter({ handleChange, current }) {
     }
 
     function isActive(value) {
-        const selectClass = value == filter ? 'filter__button--selected' : '';
+        const selectClass = value === filter ? 'filter__button--selected' : '';
         return selectClass;
     }
 

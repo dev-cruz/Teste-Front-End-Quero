@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
-import Header from './component/Header';
-import Content from './component/Content';
+import Header from './components/Header';
+import Content from './components/Content';
 
 function App() {
   return (
