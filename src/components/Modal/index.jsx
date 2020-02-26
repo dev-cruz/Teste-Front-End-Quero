@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import data from './data.json';
 
-function Modal({ render, closeModal }) {
+function Modal({ shouldRender, closeModal }) {
     function renderCityOptions() {
         const cities = data.map(d => d.campus.city);
         return cities.map((city, index) =>
@@ -21,7 +21,7 @@ function Modal({ render, closeModal }) {
         )
     }
 
-    if (!render) return null;
+    if (!shouldRender) return null;
     return (
         <div className="modal-overlay">
             <button className="modal-overlay__close-button" onClick={closeModal}>
@@ -47,14 +47,14 @@ function Modal({ render, closeModal }) {
                     <div className="modal-form__course-kind">
                         <label htmlFor="kinds" className="form-label">COMO VOCÊ QUER ESTUDAR</label>
                         <div className="course-kind__kinds" id="kinds">
-                            <div>
+                            <label htmlFor="presencial">
                                 <input type="checkbox" name="Presencial" id="Presencial" />
-                                <label htmlFor="presencial">Presencial</label>
-                            </div>
-                            <div>
+                                Presencial
+                            </label>
+                            <label htmlFor="A distância">
                                 <input type="checkbox" name="A distância" id="A distância" />
-                                <label htmlFor="A distância">A distância</label>
-                            </div>
+                                A distância
+                            </label>
                         </div>
                     </div>
                 </form>

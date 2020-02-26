@@ -31,7 +31,7 @@
     width: 100%;
 }
 
-.modal-frame h3 {
+.modal_overlay__modal-frame h3 {
     margin-bottom: 5px;
 }
 
@@ -76,5 +76,5 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
 }

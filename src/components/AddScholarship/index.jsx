@@ -19,7 +19,7 @@ function AddScholarship() {
                     <span>Clique para adicionar bolsas de cursos do seu interesse</span>
                 </div>
             </button>
-            <Modal render={renderModal} closeModal={toggleRenderModal}/>
+            <Modal shouldRender={renderModal} closeModal={toggleRenderModal}/>
         </>
     )
 }
