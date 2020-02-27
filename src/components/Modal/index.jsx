@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import data from './data.json';
 
 function Modal({ shouldRender, closeModal }) {
+    const [priceRange, setPriceRange] = useState(10000);
+
     function renderCityOptions() {
         const cities = data.map(d => d.campus.city);
         return cities.map((city, index) =>
@@ -33,29 +35,32 @@ function Modal({ shouldRender, closeModal }) {
                 <form className="modal-frame__modal-form">
                     <div className="modal-form__form-select">
                         <label htmlFor="cities" className="form-label">SELECIONE SUA CIDADE</label>
-                        <select name="city" id="cities" className="form_select__select">
+                        <select name="city" id="cities" className="form-select__select">
                             {renderCityOptions()}
                         </select>
                     </div>
                     <div className="modal-form__form-select">
                         <label htmlFor="courses" className="form-label">SELECIONE O CURSO DE SUA PREFERÊNCIA</label>
-                        <select name="city" id="courses" className="form_select__select">
+                        <select name="city" id="courses" className="form-select__select">
                             <option value="all"></option>
                             {renderCoursesOptions()}
                         </select>
                     </div>
                     <div className="modal-form__course-kind">
-                        <label htmlFor="kinds" className="form-label">COMO VOCÊ QUER ESTUDAR</label>
+                        <label htmlFor="kinds" className="form-label">COMO VOCÊ QUER ESTUDAR?</label>
                         <div className="course-kind__kinds" id="kinds">
-                            <label htmlFor="presencial">
-                                <input type="checkbox" name="Presencial" id="Presencial" />
-                                Presencial
-                            </label>
-                            <label htmlFor="A distância">
-                                <input type="checkbox" name="A distância" id="A distância" />
-                                A distância
-                            </label>
+                            <input type="checkbox" name="Presencial" value="presencial" id="presencial" />
+                            <label htmlFor="presencial">Presencial</label>
+                            <input type="checkbox" name="A distância" value="EaD" id="distancia" />
+                            <label htmlFor="distancia">A distância</label>
                         </div>
+                    </div>
+                    <div className="modal-form__price-range">
+                        <label htmlFor="prices" className="form-label">ATÉ QUANTO PODE PAGAR?</label>
+                        <input type="range" name="prices" id="prices"
+                         min="0" max="10000" onChange={e => setPriceRange(e.target.value)}
+                         step="100" 
+                         />
                     </div>
                 </form>
             </div>
