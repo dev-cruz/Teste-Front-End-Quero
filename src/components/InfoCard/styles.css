@@ -9,7 +9,7 @@
     justify-content: space-around;
 }
 
-.whats {
+.desktop {
     display: none;
 }
 
@@ -34,15 +34,17 @@
     .info-card__label--mobile {
         display: none;
     }
+    
     .info-card__label--desktop {
         display: block;
         text-align: left;
     }
-    .whats {
+
+    .desktop {
         display: flex;
     }
 
-    .name-lastname {
+    .reverse-flexbox {
         margin-left: auto;
         flex-direction: row-reverse;
     }

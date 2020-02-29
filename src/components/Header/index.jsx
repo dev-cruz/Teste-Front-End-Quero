@@ -16,7 +16,7 @@ function Header() {
                     </span>
                 </InfoCard>
                 <div className="header__logo-whats">
-                    <InfoCard icon="whatsapp" specialClass="whats">
+                    <InfoCard icon="whatsapp" specialClass="desktop">
                         <span className="info-card__label--desktop">
                             <p style={{ margin: "0px" }}>0800 123 2222</p>
                             Envie mensagem ou ligue
@@ -24,7 +24,7 @@ function Header() {
                     </InfoCard>
                     <img src={logo} alt="logo" />
                 </div>
-                <InfoCard icon="user-circle" specialClass="name-lastname">
+                <InfoCard icon="user-circle" specialClass="reverse-flexbox">
                     <span className="info-card__label--mobile">
                         Conta
                     </span>
@@ -36,7 +36,7 @@ function Header() {
             <nav className="top-bar__nav-bar">
                 <h2>Minha conta</h2>
                 <div className="nav-bar__menu">
-                    <div className="nav-bar__menu__nav-links">
+                    <div className="menu__nav-links">
                         <button>
                             Menu
                             <i className="fa fa-caret-down"></i>

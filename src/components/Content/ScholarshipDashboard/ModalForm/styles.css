@@ -1,8 +1,8 @@
-.modal-frame__modal-form {
+.modal-form {
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 60%;
+    height: 300px;
     justify-content: flex-start;
     width: 100%;
 }
