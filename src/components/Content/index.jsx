@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import ScholarshipDashboard from '../ScholarshipDashboard';
+import ScholarshipDashboard from './ScholarshipDashboard';
 
 function Content() {
     return (
