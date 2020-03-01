@@ -28,6 +28,23 @@ const ModalActions = {
             type: 'UPDATE_PRICE',
             price
         }
+    },
+    updateData(data) {
+        return {
+            type: 'UPDATE_DATA',
+            data
+        }
+    },
+    setIsLoading(isLoading) {
+        return {
+            type: 'IS_LOADING',
+            isLoading
+        }
+    },
+    resetState() {
+        return {
+            type: 'RESET_STATE'
+        }
     }
 }
 

@@ -7,7 +7,8 @@ function ModalForm({ filters, data, dispatch }) {
 
     function renderCityOptions() {
         const citiesNames = data.map(d => d.campus.city);
-        return citiesNames.map(city => (
+        const uniqueNames = [...new Set(citiesNames)];
+        return uniqueNames.map(city => (
             <option value={city} key={city}>
                 {city}
             </option>
@@ -16,7 +17,8 @@ function ModalForm({ filters, data, dispatch }) {
 
     function renderCourseOptions() {
         const coursesNames = data.map(d => d.course.name);
-        return coursesNames.map(course => (
+        const uniqueNames = [...new Set(coursesNames)];
+        return uniqueNames.map(course => (
             <option value={course} key={course}>
                 {course}
             </option>

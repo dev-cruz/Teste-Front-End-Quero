@@ -12,3 +12,22 @@
 .App {
   text-align: center;
 }
+
+.btn {
+  background: transparent;
+  border: solid 1px;
+  border-radius: 3px;
+  box-sizing: content-box;
+  font-weight: bold;
+  padding: 15px 25px;
+}
+
+.btn-yellow {
+  border-color: var(--sec-yellow);
+  background-color: var(--main-yellow);
+}
+
+.btn-blue {
+  border-color: var(--sec-blue);
+  color: var(--sec-blue);
+}

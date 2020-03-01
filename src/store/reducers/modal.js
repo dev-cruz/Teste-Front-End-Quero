@@ -1,7 +1,5 @@
-import data from '../../data.json'
-
 const initialState = {
-    data,
+    data: [],
     modalFilters: {
         city: 'all',
         course: 'all',
@@ -9,6 +7,7 @@ const initialState = {
         remotely: true,
         price: 10000
     },
+    isLoading: false,
     selectedScholarships: {}
 }
 
@@ -38,6 +37,21 @@ export default function modal(state = initialState, action) {
             return {
                 ...state,
                 modalFilters: {...state.modalFilters, price: action.price}
+            }
+        case 'UPDATE_DATA':
+            return {
+                ...state,
+                data: action.data
+            }
+        case 'SET_ISLOADING':
+            return {
+                ...state,
+                isLoading: action.isLoading
+            }
+        case 'RESET_STATE':
+            return {
+                ...initialState,
+                data: state.data
             }
         default:
             return state;
