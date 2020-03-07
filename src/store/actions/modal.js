@@ -35,12 +35,6 @@ const ModalActions = {
       data
     };
   },
-  setIsLoading(isLoading) {
-    return {
-      type: "IS_LOADING",
-      isLoading
-    };
-  },
   resetState() {
     return {
       type: "RESET_STATE"
@@ -49,6 +43,18 @@ const ModalActions = {
   filterData() {
     return {
       type: "FILTER_DATA"
+    };
+  },
+  addSelectedScholarship(data) {
+    return {
+      type: "ADD_SELECTED_SCHOLARSHIP",
+      data
+    };
+  },
+  removeSelectedScholarship(data) {
+    return {
+      type: "REMOVE_SELECTED_SCHOLARSHIP",
+      data
     };
   }
 };

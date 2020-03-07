@@ -6,10 +6,9 @@ const initialState = {
     course: "all",
     presential: true,
     remotely: true,
-    price: 10000
+    price: 2000
   },
-  isLoading: false,
-  selectedScholarships: {}
+  selectedScholarships: []
 };
 
 export default function modal(state = initialState, action) {
@@ -45,61 +44,55 @@ export default function modal(state = initialState, action) {
         data: action.data,
         filteredData: action.data
       };
-    case "SET_ISLOADING":
-      return {
-        ...state,
-        isLoading: action.isLoading
-      };
     case "RESET_STATE":
       return {
         ...initialState,
-        data: state.data
+        data: state.data,
+        filteredData: state.data
       };
     case "FILTER_DATA":
-      const filterByCity = scholarships => {
-        if (state.modalFilters.city === "all") return scholarships;
-        return scholarships.filter(
-          scholarship => scholarship.campus.city === state.modalFilters.city
-        );
+      const filterByCity = scholarship => {
+        if (state.modalFilters.city === "all") return scholarship;
+        return scholarship.campus.city === state.modalFilters.city;
       };
-      const filterByCourse = scholarships => {
-        if (state.modalFilters.city === "all") return scholarships;
-        return scholarships.filter(
-          scholarship => scholarship.course.name === state.modalFilters.course
-        );
+
+      const filterByCourse = scholarship => {
+        if (state.modalFilters.course === "all") return scholarship;
+        return scholarship.course.name === state.modalFilters.course;
       };
-      const filterByPresential = scholarships => {
+      const filterByPresential = scholarship => {
         if (!state.modalFilters.presential) {
-          return scholarships.filter(
-            scholarship => scholarship.course.kind !== "Presencial"
-          );
+          return scholarship.course.kind !== "Presencial";
         }
-        return scholarships;
+        return scholarship;
       };
-      const filterByRemotely = scholarships => {
+      const filterByRemotely = scholarship => {
         if (!state.modalFilters.remotely) {
-          return scholarships.filter(
-            scholarship => scholarship.course.kind !== "EaD"
-          );
+          return scholarship.course.kind !== "EaD";
         }
-        return scholarships;
+        return scholarship;
       };
-      /*const filterByPrice = scholarships =>
-        scholarships.filter(
-          scholarship =>
-            scholarship.price_with_discount <= state.modalFilters.price
-        );*/
+      const filterByPrice = scholarship =>
+        scholarship.price_with_discount <= state.modalFilters.price;
+
       const newFilteredData = state.data
-        .map(filterByCity)
-        .map(filterByCourse)
-        .map(filterByPresential)
-        .map(filterByRemotely);
-      //.map(filterByPrice);
+        .filter(filterByCity)
+        .filter(filterByCourse)
+        .filter(filterByPresential)
+        .filter(filterByRemotely)
+        .filter(filterByPrice);
       return {
         ...state,
         filteredData: newFilteredData
       };
-
+    case "ADD_SELECTED_SCHOLARSHIP":
+      return {
+        ...state,
+        selectedScholarships: [...state.selectedScholarships, action.data]
+      };
+    case "REMOVE_SELECTED_SCHOLARSHIP":
+      console.log("removendo");
+      return state;
     default:
       return state;
   }

@@ -6,7 +6,7 @@ import ModalForm from "../ModalForm";
 import ScholarshipOptions from "../ScholarshipOptions";
 import ModalActions from "../../../../store/actions/modal";
 
-function Modal({ shouldRender, closeModal, dispatch }) {
+function Modal({ shouldRender, closeModal, selectedScholarships, dispatch }) {
   useEffect(() => {
     axios
       .get(
@@ -30,16 +30,6 @@ function Modal({ shouldRender, closeModal, dispatch }) {
         <h3>Adicionar bolsas</h3>
         <span>Filtre e adicione bolsas de seu interesse</span>
         <ModalForm />
-        <div className="modal-frame__offers-sort">
-          <span>Resultado:</span>
-          <div className="offers-sort">
-            <label htmlFor="offers-sort__select">Ordenar por</label>
-            <select name="offers-sort__select" id="offers-sort__select">
-              <option value="univerisityName">Nome da Faculdade</option>
-              <option value="courseName">Nome do Curso</option>
-            </select>
-          </div>
-        </div>
         <ScholarshipOptions />
         <div className="modal-frame__buttons">
           <button className="btn btn-blue" onClick={closeModal}>
@@ -55,7 +45,8 @@ function Modal({ shouldRender, closeModal, dispatch }) {
 }
 
 const mapStateToProps = state => ({
-  data: state.modal.data
+  data: state.modal.data,
+  selected: state.modal.selectedScholarships
 });
 
 export default connect(mapStateToProps)(Modal);

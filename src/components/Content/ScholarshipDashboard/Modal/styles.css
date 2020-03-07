@@ -1,67 +1,46 @@
 .modal-overlay {
-    align-items: center;
-    background-color: var(--modal-overlay);
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-start;
-    left: 0;
-    padding-top: 20px;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+  align-items: center;
+  background-color: var(--modal-overlay);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  left: 0;
+  padding-top: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .modal-overlay__close-button {
-    align-self: flex-end;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 2em;
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2em;
 }
 
 .modal-overlay__modal-frame {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-start;
-    overflow-y: scroll;
-    padding: 0px 15px;
-    width: 100%;
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  padding: 0px 15px;
+  width: 100%;
 }
 
 .modal-overlay__modal-frame h3 {
-    margin-bottom: 5px;
-}
-
-.modal-frame__offers-sort {
-    align-items: center;
-    display: flex;
-    font-weight: bold;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.offers-sort {
-    width: 50%;
-}
-
-#offers-sort__select {
-    border: none;
-    background-color: transparent;
-    color: var(--sec-blue);
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .modal-frame__buttons {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-    width: 100%;    
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  width: 100%;
 }

@@ -1,54 +1,36 @@
 .scholarship-options {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-    width: 100%;
-}
-
-.scholarship-option {
-    align-items: center;
-    display: flex;
-    height: 100px;
-    justify-content: flex-start;
-    margin: 15px 0;
-    width: 100%;
-}
-
-.scholarship-option__logo {
-    margin: 0px 15px;
-}
-
-.scholarship-option__logo img {
-    width: 80px;
-}
-
-.scholarship-option__description {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9em;
-    height: 100%;
-    justify-content: space-between;
-    text-align: left;
-}
-
-.scholarship-option__description p {
-    margin: 5px 0;
-}
-
-.title__course-name {
-    color: var(--sec-blue);
-    font-weight: bold;
-}
-
-.price--discount-text {
-    color: var(--green);
-    font-weight: bold;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  width: 100%;
 }
 
 .divider {
-    align-self: center;
-    background-color: lightgray;
-    height: 2px;
-    width: 90%;
+  align-self: center;
+  background-color: lightgray;
+  height: 2px;
+  width: 90%;
+}
+
+.scholarship-options__offers-sort {
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.offers-sort {
+  width: 50%;
+}
+
+#offers-sort__select {
+  border: none;
+  background-color: transparent;
+  color: var(--sec-blue);
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: bold;
 }
