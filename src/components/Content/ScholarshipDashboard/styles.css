@@ -1,7 +1,21 @@
 .scholarship-dashboard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.scholarship-dashboard__scholarship-list {
+  margin-top: 15px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .scholarship-dashboard__scholarship-list {
     align-items: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
 }

@@ -1,51 +1,100 @@
 .info-card {
-    align-items: center;
-    color: var(--sec-blue);
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2em;
-    font-weight: bolder;
-    height: 95%;
-    justify-content: space-around;
+  align-items: center;
+  color: var(--sec-blue);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  font-weight: bolder;
+  height: 95%;
+  justify-content: space-around;
+}
+
+.info-card-footer {
+  background-color: var(--sec-blue);
+  color: #fff;
+}
+
+.info-card-footer__label-title {
+  margin: 0 0 0 20px;
+}
+
+.info-card-footer__label {
+  font-weight: normal;
+  margin: 0 0 0 20px;
+}
+
+.middle-container__info-card {
+  height: 80px;
+  width: 32.7%;
+}
+
+.info-card-footer__whats {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
 }
 
 .desktop {
-    display: none;
+  display: none;
 }
 
 .info-card__icon {
-    font-size: 1.6em;
+  font-size: 1.6em;
 }
 
 .info-card__label--desktop {
-    display: none;
+  display: none;
 }
 
-@media(min-width: 720px) {
-    .info-card {
-        flex-direction: row;
-        width: 170px;
-    }
+.info-card__label--desktop,
+.info-card__label--mobile {
+  margin: 0;
+}
 
-    .info-card__icon {
-        font-size: 2em;
-    }
+.logo-whats__title {
+  margin: 0;
+}
 
-    .info-card__label--mobile {
-        display: none;
-    }
-    
-    .info-card__label--desktop {
-        display: block;
-        text-align: left;
-    }
+.logo-whats__desc {
+  font-size: 0.75em;
+  margin: 0;
+}
 
-    .desktop {
-        display: flex;
-    }
+.green {
+  color: var(--green);
+  margin-right: 3px;
+}
 
-    .reverse-flexbox {
-        margin-left: auto;
-        flex-direction: row-reverse;
-    }
+@media (min-width: 1024px) {
+  .info-card {
+    flex-direction: row;
+    width: 170px;
+  }
+
+  .info-card__icon {
+    font-size: 1.5em;
+  }
+
+  .info-card__label--mobile {
+    display: none;
+  }
+
+  .info-card__label--desktop {
+    display: block;
+    text-align: left;
+  }
+
+  .desktop {
+    display: flex;
+    width: 180px;
+  }
+
+  .reverse-flexbox {
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
 }

@@ -91,7 +91,9 @@ function ModalForm({ filters, data, dispatch }) {
             defaultChecked={filters.presential}
             onChange={handlePresentialChange}
           />
-          <label htmlFor="presencial">Presencial</label>
+          <label className="checkbox-label" htmlFor="presencial">
+            Presencial
+          </label>
           <input
             type="checkbox"
             name="ead"
@@ -99,7 +101,9 @@ function ModalForm({ filters, data, dispatch }) {
             defaultChecked={filters.remotely}
             onChange={handleRemotelyChange}
           />
-          <label htmlFor="distancia">A distância</label>
+          <label className="checkbox-label" htmlFor="distancia">
+            A distância
+          </label>
         </div>
       </div>
       <div className="modal-form__price-range modal-form__div">

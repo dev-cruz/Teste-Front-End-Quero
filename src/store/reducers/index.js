@@ -1,6 +1,8 @@
-import {combineReducers} from 'redux';
-import modal from './modal';
+import { combineReducers } from "redux";
+import modal from "./modal";
+import scholarshipsDashboard from "./scholarshipsDashboard";
 
 export default combineReducers({
-    modal,
+  modal,
+  scholarshipsDashboard
 });

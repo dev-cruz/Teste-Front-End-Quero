@@ -1,15 +1,20 @@
 :root {
-  --main-blue: #18ACC4;
-  --sec-blue: #007A8D;
-  --main-yellow: #FDCB13;
-  --sec-yellow: #DE9E1F;
-  --green: #0FA866;
-  --font-color: #1F2D30;
-  --grey-bg: #FBFBFB;
+  --main-blue: #18acc4;
+  --sec-blue: #007a8d;
+  --main-yellow: #fdcb13;
+  --sec-yellow: #de9e1f;
+  --green: #0fa866;
+  --font-color: #1f2d30;
+  --grey-bg: #fbfbfb;
   --modal-overlay: rgba(31, 45, 48, 0.88);
 }
 
 .App {
+  align-items: center;
+  background-color: var(--grey-bg);
+  display: flex;
+  color: var(--font-color);
+  flex-direction: column;
   text-align: center;
 }
 
@@ -19,15 +24,71 @@
   border-radius: 3px;
   box-sizing: content-box;
   font-weight: bold;
-  padding: 15px 25px;
+  padding: 15px 35px;
 }
 
 .btn-yellow {
   border-color: var(--sec-yellow);
   background-color: var(--main-yellow);
+  padding: 15px 40px;
 }
 
 .btn-blue {
   border-color: var(--sec-blue);
   color: var(--sec-blue);
+}
+
+.btn-disabled {
+  background-color: lightgrey;
+  border-color: darkgray;
+  color: grey;
+  padding: 15px 40px;
+}
+
+.divider {
+  align-self: center;
+  background-color: lightgray;
+  height: 2px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.checkbox-label {
+  bottom: 0;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  position: relative;
+}
+input[type="checkbox"]:before {
+  background-color: white;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: -3px;
+  width: 16px;
+}
+
+input[type="checkbox"]:checked:before {
+  border-color: var(--main-blue);
+  background-color: var(--main-blue);
+}
+
+input[type="checkbox"]:checked:after {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 6px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 5px;
 }

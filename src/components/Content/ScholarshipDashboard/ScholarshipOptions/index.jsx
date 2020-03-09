@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./styles.css";
 import ModalScholarship from "../ModalScholarship";
 
-function ScholarshipOptions({ filteredData }) {
+function ScholarshipOptions({ filteredData, favoriteScholarships }) {
   const [sort, setSort] = useState("university");
 
   function sortByUniversityName(a, b) {
@@ -49,7 +49,14 @@ function ScholarshipOptions({ filteredData }) {
       break;
   }
 
-  const data = filteredData.sort(sortFunction);
+  function checkScholarships() {
+    return filteredData.filter(scholarship => {
+      const favorites = JSON.stringify(favoriteScholarships);
+      return !favorites.includes(JSON.stringify(scholarship));
+    });
+  }
+
+  const scholarships = checkScholarships().sort(sortFunction);
 
   return (
     <div className="scholarship-options">
@@ -69,7 +76,7 @@ function ScholarshipOptions({ filteredData }) {
         </div>
       </div>
       <hr className="divider"></hr>
-      {data.map((data, index) => (
+      {scholarships.map((data, index) => (
         <ModalScholarship data={data} key={index} />
       ))}
     </div>
@@ -77,7 +84,8 @@ function ScholarshipOptions({ filteredData }) {
 }
 
 const mapStateToProps = state => ({
-  filteredData: state.modal.filteredData
+  filteredData: state.modal.filteredData,
+  favoriteScholarships: state.scholarshipsDashboard
 });
 
 export default connect(mapStateToProps)(ScholarshipOptions);

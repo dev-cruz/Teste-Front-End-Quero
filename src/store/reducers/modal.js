@@ -91,8 +91,20 @@ export default function modal(state = initialState, action) {
         selectedScholarships: [...state.selectedScholarships, action.data]
       };
     case "REMOVE_SELECTED_SCHOLARSHIP":
-      console.log("removendo");
-      return state;
+      function compareObjects(obj1, obj2) {
+        const json1 = JSON.stringify(obj1);
+        const json2 = JSON.stringify(obj2);
+        if (json1 === json2) return true;
+        return false;
+      }
+
+      const newSelectedScholarships = state.selectedScholarships.filter(
+        scholarship => !compareObjects(scholarship, action.data)
+      );
+      return {
+        ...state,
+        selectedScholarships: newSelectedScholarships
+      };
     default:
       return state;
   }

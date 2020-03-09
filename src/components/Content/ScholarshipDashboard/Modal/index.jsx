@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import "./styles.css";
 import ModalForm from "../ModalForm";
 import ScholarshipOptions from "../ScholarshipOptions";
 import ModalActions from "../../../../store/actions/modal";
+import ScholarshipsDashBoardActions from "../../../../store/actions/scholarshipsDashboard";
 
 function Modal({ shouldRender, closeModal, selectedScholarships, dispatch }) {
+  const [buttonDisabled, setButtonDisabled] = useState(true);
   useEffect(() => {
     axios
       .get(
@@ -17,10 +19,23 @@ function Modal({ shouldRender, closeModal, selectedScholarships, dispatch }) {
       });
   }, []);
 
+  useEffect(() => {
+    if (selectedScholarships.length === 0) setButtonDisabled(true);
+    else setButtonDisabled(false);
+  }, [selectedScholarships]);
+
   if (!shouldRender) {
     dispatch(ModalActions.resetState());
     return null;
   }
+
+  function addScholarships() {
+    dispatch(
+      ScholarshipsDashBoardActions.addFavoriteScholarship(selectedScholarships)
+    );
+    closeModal();
+  }
+
   return (
     <div className="modal-overlay">
       <button className="modal-overlay__close-button" onClick={closeModal}>
@@ -35,7 +50,11 @@ function Modal({ shouldRender, closeModal, selectedScholarships, dispatch }) {
           <button className="btn btn-blue" onClick={closeModal}>
             Cancelar
           </button>
-          <button className="btn btn-yellow" disabled={false}>
+          <button
+            className={`btn ${buttonDisabled ? "btn-disabled" : "btn-yellow"}`}
+            disabled={buttonDisabled}
+            onClick={addScholarships}
+          >
             Adicionar bolsa(s)
           </button>
         </div>
@@ -46,7 +65,7 @@ function Modal({ shouldRender, closeModal, selectedScholarships, dispatch }) {
 
 const mapStateToProps = state => ({
   data: state.modal.data,
-  selected: state.modal.selectedScholarships
+  selectedScholarships: state.modal.selectedScholarships
 });
 
 export default connect(mapStateToProps)(Modal);

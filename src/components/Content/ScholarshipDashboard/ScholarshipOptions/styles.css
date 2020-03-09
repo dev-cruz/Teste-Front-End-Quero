@@ -6,13 +6,6 @@
   width: 100%;
 }
 
-.divider {
-  align-self: center;
-  background-color: lightgray;
-  height: 2px;
-  width: 90%;
-}
-
 .scholarship-options__offers-sort {
   align-items: center;
   display: flex;
