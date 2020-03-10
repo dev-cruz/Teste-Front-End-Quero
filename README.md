@@ -11,6 +11,9 @@ Siga os passos com os seguintes comandos:
 # Baixando o projeto
 $ git clone https://github.com/joaocruz19/Teste-Front-End-Quero/
 
+# Entrando na pasta
+$ cd Teste-Front-Quero
+
 # Instalando dependências
 $ yarn 
 # ou
