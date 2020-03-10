@@ -12,7 +12,7 @@ Siga os passos com os seguintes comandos:
 $ git clone https://github.com/joaocruz19/Teste-Front-End-Quero/
 
 # Entrando na pasta
-$ cd Teste-Front-Quero
+$ cd Teste-Front-End-Quero
 
 # Instalando dependências
 $ yarn 
