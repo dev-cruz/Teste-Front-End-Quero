@@ -20,3 +20,19 @@
   height: 75px;
   justify-content: center;
 }
+
+@media (min-width: 1024px) {
+  .footer__cards {
+    background-color: var(--sec-blue);
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer__middle-container {
+    height: 100%;
+    justify-content: space-around;
+    margin: 0;
+  }
+}

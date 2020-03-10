@@ -64,15 +64,27 @@
   margin: 0;
 }
 
+.label__desktop {
+  display: none;
+}
+
 .green {
   color: var(--green);
   margin-right: 3px;
+}
+
+.label__desktop-whats {
+  display: none;
 }
 
 @media (min-width: 1024px) {
   .info-card {
     flex-direction: row;
     width: 170px;
+  }
+
+  .info-card-footer {
+    width: 255px;
   }
 
   .info-card__icon {
@@ -88,6 +100,15 @@
     text-align: left;
   }
 
+  .info-card-footer__label {
+    display: none;
+  }
+
+  .info-card-footer__whats {
+    height: 100%;
+    width: 250px;
+  }
+
   .desktop {
     display: flex;
     width: 180px;
@@ -96,5 +117,23 @@
   .reverse-flexbox {
     margin-left: auto;
     flex-direction: row-reverse;
+  }
+
+  .label__desktop {
+    display: block;
+    font-size: 0.8em;
+    margin: 0;
+    text-align: left;
+  }
+
+  .label__desktop-whats {
+    display: block;
+    font-size: 0.8em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .chat {
+    width: 200px;
   }
 }

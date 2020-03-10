@@ -19,6 +19,7 @@
   border: none;
   color: #fff;
   font-size: 2em;
+  padding: 0;
 }
 
 .modal-overlay__modal-frame {
@@ -43,4 +44,24 @@
   justify-content: space-around;
   margin: 20px 0;
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .modal-overlay {
+    padding: 20px 250px 0 250px;
+  }
+
+  .modal-overlay__modal-frame {
+    padding: 5px 50px;
+  }
+
+  .modal-overlay__modal-frame h3,
+  .modal-overlay__modal-frame span {
+    align-self: flex-start;
+  }
+
+  .modal-frame__buttons {
+    align-self: flex-end;
+    width: 50%;
+  }
 }

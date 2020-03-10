@@ -4,9 +4,8 @@ import Filter from "./Filter/index.jsx";
 import AddScholarship from "./AddScholarship";
 import Scholarship from "./Scholarship";
 import { connect } from "react-redux";
-import ScholarshipsDashBoardActions from "../../../store/actions/scholarshipsDashboard";
 
-function ScholarshipDashboard({ favoriteScholarships, dispatch }) {
+function ScholarshipDashboard({ favoriteScholarships }) {
   const [filter, setFilter] = useState("all");
 
   function renderScholarships() {

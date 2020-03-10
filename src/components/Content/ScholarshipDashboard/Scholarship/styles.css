@@ -14,6 +14,13 @@
   width: 100%;
 }
 
+.info-top__logo {
+  align-items: center;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
+
 .scholarship__info-top img {
   max-width: 100%;
   height: auto;
@@ -81,10 +88,37 @@
   width: 100%;
 }
 
+.stars-score {
+  color: var(--main-yellow);
+  font-weight: bold;
+}
+
+.stars-score span {
+  color: var(--font-color);
+  margin: 2px;
+}
+
+.stars-score i {
+  margin: 0 2px;
+}
+
+.star-off {
+  color: lightgrey;
+}
+
 @media (min-width: 1024px) {
   .scholarship {
     height: 500px;
     margin: 0 30px 30px 0;
+    transition: all 0.2s ease-in-out;
     width: 320px;
+  }
+
+  .scholarship:hover {
+    transform: scale(1.1);
+  }
+
+  .stars-score i {
+    margin: 0 1px;
   }
 }

@@ -27,3 +27,9 @@
   font-family: inherit;
   font-weight: bold;
 }
+
+@media (min-width: 1024px) {
+  .offers-sort {
+    width: auto;
+  }
+}

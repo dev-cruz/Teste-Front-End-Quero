@@ -18,6 +18,11 @@
   text-align: center;
 }
 
+button,
+li {
+  cursor: pointer;
+}
+
 .btn {
   background: transparent;
   border: solid 1px;
@@ -33,15 +38,25 @@
   padding: 15px 40px;
 }
 
+.btn-yellow:hover {
+  background-color: #ffd025;
+}
+
 .btn-blue {
   border-color: var(--sec-blue);
   color: var(--sec-blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--sec-blue);
+  color: #fff;
 }
 
 .btn-disabled {
   background-color: lightgrey;
   border-color: darkgray;
   color: grey;
+  cursor: not-allowed;
   padding: 15px 40px;
 }
 

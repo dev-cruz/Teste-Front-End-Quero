@@ -37,3 +37,15 @@
   color: var(--green);
   font-weight: bold;
 }
+
+@media (min-width: 1024px) {
+  .scholarship-option {
+    height: 75px;
+  }
+
+  .scholarship-option__description {
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+  }
+}
